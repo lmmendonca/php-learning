@@ -1,41 +1,20 @@
-<html lang='pt'>
+<?php
 
-<head>
+// Associative Arrays
 
-    <meta charset="UTF-8">
-
-    <title>Document</title>
-
-    <style>
-
-        header {
-            background: #e3e3e3;
-
-            padding: 2em;
-
-            text-align: center;
-        }
-
-    </style>
-</head>
-
-<body>
-    <header>
-        <h1>
-            <?php 
-                // ?key=value
-                
-                // $name = $_GET['name'];
+$task = [
+    'title' => 'Finish homework',
+    'due' => 'today',
+    'assigned_to' => 'Jeff',
+    'completed' => true
+];
 
 
-                // echo $name; 
-            ?>
-        </h1>
 
-        <h1>
-            <?= "Hello, " . htmlspecialchars($_GET['name']); ?>
-        </h1>
-    </header>
-</body>
 
-</html>
+
+
+// die(var_dump($person));
+
+unset($person['age']);
+require 'index.view.php';

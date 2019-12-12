@@ -18,35 +18,29 @@
 </head>
 
 <body>
+<ul>
 
-    <h1> Task for the Day </h1>
+    <?php foreach ($tasks as $task) : ?>
 
-    <ul>
-        <?php
+        <li>
 
-        echo "<li> <strong>title : </strong> $task[title] </li>";
-        echo "<li> <strong>due : </strong> $task[due] </li>";
-        echo "<li> <strong>assigned_to : </strong> $task[assigned_to] </li>";
-        ?>
+            <?php if ($task->complited) : ?>
+                <span style="text-decoration: line-through;">
+                    <?= $task->description; ?>
+                </span>
+            <?php else: ?>
+                <?= $task->description; ?>
+            <?php endif ?>
 
-        <li> <strong> completed : </strong> <?= $task['completed'] ? 'Complete' : 'Incomplete' ?> </li>
+            <?php if ($task->complited) : ?>
+                <span style="text-decoration: line-through;"></span>
+            <?php endif; ?>
 
-
-        <!-- Conditions -->
- 
-        <li> <strong> completed : </strong>
-            <?php
-            if ($task['completed']) {
-                echo 'Complete';
-            } else {
-                echo 'Incomplete';
-            }
-            ?>
         </li>
 
+    <?php endforeach; ?>
 
-    </ul>
-
+</ul>
 
 </body>
 

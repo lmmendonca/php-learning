@@ -1,17 +1,36 @@
 <?php
 
-// Associative Arrays
+require 'functions.php';
 
-$task = [
-    'title' => 'Finish homework',
-    'due' => 'today',
-    'assigned_to' => 'Jeff',
-    'completed' => true
+class Task
+{
+
+    public $description;
+    public $completed = false;
+
+    public function __construct($description)
+    {
+        // Automatically triggeredon instantiation
+
+        $this->description = $description;
+    }
+
+    public function complite()
+    {
+        $this->completed = true;
+    }
+
+    public function isComplete()
+    {
+        return $this->completed;
+    }
+
+}
+
+$tasks = [
+    new Task('Go to the mall'),
+    new Task('Go to the store'),
+    new Task('Go to the bekery')
 ];
 
-
-
-// die(var_dump($person));
-
-unset($person['age']);
 require 'index.view.php';
